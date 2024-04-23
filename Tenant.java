@@ -1,4 +1,5 @@
 
+import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -7,18 +8,21 @@ import java.util.List;
  */
 /**
  *
- * @author ADMIN
+ * @author Asus
  */
 public class Tenant {
 
     private User user;
-    public static List<Contract> listOfContract = new ArrayList<>();
-
-    public static void RequestCreateRentalContract() {
-       
+    private List<RentalContract> listOfContract = new ArrayList<>();
+    
+    public static String requestCreateRentalContract(){
+        return "Wanting to create new contract";
     }
     
-    public static void requestTerminateRentalContract(){
-        
+    public static String requestTerminateRentalContract(String contractID){
+        return "Wanting to terminate this contract : "+contractID;
     }
+    
+
 }
+

@@ -6,16 +6,17 @@ import java.util.List;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
 /**
  *
- * @author ADMIN
+ * @author Asus
  */
 public class RegisteredUser {
-    public static List<User> listOfUser = new ArrayList<>();
+
+    static List<User> listOfUser = Database.userList;
+
     public static boolean AddUser(User user) {
         for (User currentUser : listOfUser) {
-            if (currentUser.ID.equals(user.ID)) {
+            if (currentUser.getUserID().equals(user.getUserID())) {
                 return false;
             }
         }
@@ -25,7 +26,7 @@ public class RegisteredUser {
 
     public static boolean RemoveUser(User user) {
         for (User currentUser : listOfUser) {
-            if (currentUser.ID.equals(user.ID)) {
+            if (currentUser.getUserID().equals(user.getUserID())) {
 
                 listOfUser.remove(user);
                 return true;
@@ -33,4 +34,5 @@ public class RegisteredUser {
         }
         return false;
     }
+
 }
